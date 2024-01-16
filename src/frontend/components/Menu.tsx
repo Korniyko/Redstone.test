@@ -1,15 +1,28 @@
 import React from "react";
 import './Menu.scss'
 import Button from "./common/Button";
+import Logo from '../img/logo.svg';
 
 
 
 
 
-const Menu = () => {
+
+const Menu = ({ setOpenPopUpMenu }) => {
+
+
+
 
     return (
         <div className="menuContainers">
+            <div className="logoContainer ">
+                <div className="logo">
+                    <img src={Logo} alt="logo" />
+                </div>
+                <div className="closePopUp" onClick={() => setOpenPopUpMenu(false)}>
+                    X   Закрити
+                </div>
+            </div>
             <div className="menuContent">
                 <div className="menu">
                     <div className="row">
@@ -32,7 +45,7 @@ const Menu = () => {
                     </div>
                     <div className="entry">
                         <p>У Вас є цікавий проект, давай втілимо його в реальність</p>
-                        <Button label="ЗАПОВНИТИ БРИФ"/>
+                        <Button label="ЗАПОВНИТИ БРИФ" />
                     </div>
                 </div>
 

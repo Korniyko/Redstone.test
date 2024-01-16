@@ -12,33 +12,44 @@ const Header = () => {
 
     const [isOpenPopUp, setOpenPopUp] = useState(false)
     const [isOpenPopUpMenu, setOpenPopUpMenu] = useState(false)
-    const [contactModalContent, setcontactModalContent] = useState('')
+    const [contactModalContent, setContactModalContent] = useState('')
 
     useEffect(() => {
-        fetch('https://redstone.media/merge/uk/_popup.php', {
+        fetch('http://localhost:6500/merge/uk/_popup.php', {
             headers: {
                 'Content-type': 'text/html'
             },
             method: 'GET',
-        }).then((response: Response) => {
-            if (!response.ok) {
-                throw new Error(response.statusText)
-            }
-            return response
-        }).then((response: Response) => response.json())
-            .then((data: any) => {
-                if (data.htmlPart) {
-                    
-                    const unescapedHtmlText = data.htmlPart.replace(/\\\\\\"/g, '"').replace(/\\n/g, '').replace(/\\\\"/g, '');
-                    // const decodedHtml = decodeURIComponent(unescapedHtmlText);
-                    setcontactModalContent(unescapedHtmlText)
-                }
+        }).then(response => response.text())
+            .then(html => {
+                const tempElement = document.createElement('div');
+                tempElement.innerHTML = html;
+                const targetDiv = tempElement.querySelector('.popup-feedback');
 
+                if (targetDiv) {
+                    const content = targetDiv.innerHTML;
+                    setContactModalContent(content);
+                }
             })
             .catch((error: Error) => {
                 console.error(`Error happend on getCategories:${error}`)
             })
     }, [])
+
+    useEffect(() => {
+        if (isOpenPopUp) {
+            setTimeout(() => {
+                const closeButton = document.querySelector('.popup-feedback .btn-close');
+
+                closeButton?.addEventListener('click', function () {
+                    setOpenPopUp(false)
+                })
+            }, 0)
+        }
+
+
+
+    }, [isOpenPopUp])
 
     const openPopUp = () => {
         setOpenPopUp(true)
@@ -46,7 +57,6 @@ const Header = () => {
     const openPopUpMenu = () => {
         setOpenPopUpMenu(true)
     }
-
 
 
     return (
@@ -89,12 +99,12 @@ const Header = () => {
             </header>
             {isOpenPopUp && (
                 <PopUp backgroundColor="white">
-                    <div dangerouslySetInnerHTML={{__html:contactModalContent}}></div>
+                    <div className="popup-feedback" dangerouslySetInnerHTML={{ __html: contactModalContent }}></div>
                 </PopUp>
             )}
             {isOpenPopUpMenu && (
                 <PopUp backgroundColor="rgb(66 66 66)">
-                    <Menu />
+                    <Menu setOpenPopUpMenu={setOpenPopUpMenu} />
                 </PopUp>
             )}
 

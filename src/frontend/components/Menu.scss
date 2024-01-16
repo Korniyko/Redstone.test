@@ -1,23 +1,47 @@
 .menuContainers {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    height: 100vh;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    overflow: hidden;
+    padding: 15px;
+
+    .logoContainer {
+        padding-top: 50px;
+        display: flex;
+        gap: 100px;
+        color: white;
+        font-style: normal;
+
+        .logo {
+            img {
+                max-width: 140px;
+                filter: invert(1);
+
+            }
+        }
+
+
+    }
+
 
     .menuContent {
-
+        height: 100%;
         display: flex;
-        position: relative;
+        justify-content: space-between;
+        align-items: center;
 
         .menu {
             display: flex;
-            gap: 50px;
+            align-items: center;
+            width: 55%;
 
             .row {
                 display: flex;
                 flex-direction: column;
                 gap: 50px;
+                width: 100%;
 
                 a {
                     font-size: 42px;
@@ -30,21 +54,23 @@
         }
 
         .containerRow {
-            position: absolute;
-            right: 0;
             top: 0;
-            height: 100vh;
-            position: fixed;
-           
-
+            right: 0;
+            position: absolute;
+            height: 100%;
+            bottom: 0;
+            width: 45%;
+            display: flex;
+            flex-direction: column;
 
             .containerEmail {
                 background-color: #181818;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
-                
                 text-align: center;
+                padding: 100px;
+                height: 100%;
 
                 p {
                     letter-spacing: .05em;
@@ -54,6 +80,7 @@
                     text-transform: lowercase;
                     margin-bottom: 15px;
                     color: #959595;
+
                 }
 
                 a {
@@ -69,6 +96,19 @@
                 font-size: 20px;
                 background-color: #202020;
                 text-align: center;
+                padding: 100px;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                gap: 50px;
+                align-items: center;
+                text-wrap: nowrap;
+                height: 100%;
+
+                p {
+                    width: 100%;
+                    white-space: break-spaces;
+                }
             }
         }
 
