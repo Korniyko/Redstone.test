@@ -1,0 +1,69 @@
+
+
+header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    background: white;
+    z-index: 10;
+    width: 100%;
+
+    .headers {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: #232323;
+        letter-spacing: .05em;
+        font-size: 13px;
+        font-weight: 400;
+
+
+        .logoContainer {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+
+            .logo img {
+                max-width: 140px;
+            }
+
+            .menuBanner {
+                display: flex;
+                align-items: center;
+            }
+
+            .menuBanner:hover {
+                color: #e70000;
+                transition: color 0.2s ease;
+                cursor: pointer;
+            }
+        }
+
+        .menuList,
+        .containerContacts {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .menuListItem:hover {
+            color: #e70000;
+            transition: color 0.2s ease;
+        }
+
+        .containerContacts .telephone a {
+            color: black;
+            transition: color 0.2s ease;
+            white-space: nowrap;
+            align-items: center;
+            display: flex;
+
+            &:hover {
+                color: #e70000;
+            }
+        }
+    }
+
+}

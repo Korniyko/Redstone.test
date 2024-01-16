@@ -1,0 +1,44 @@
+[
+   {
+    "id":1,
+    "title":"Доставка їжі",
+    "img":"https://redstone.media/merge/img/redstone-food-delivery.png" ,
+    "backgroundColor":"#eacc14"
+   },
+   {
+    "id":2,
+    "title":"Будівництво",
+    "img":"https://redstone.media/merge/img/category-img-6.png"  ,
+    "backgroundColor":"#389727"
+
+   },
+   {
+    "id":3,
+    "title":"APP",
+    "img":"https://redstone.media/merge/img/category-img-5.png"  ,
+    "backgroundColor":"#3573bc"
+
+   },
+   {
+    "id":4,
+    "title":"WEB Solution",
+    "img":"https://redstone.media/merge/img/category-img-8.webp"  ,
+    "backgroundColor":"#b30053"
+
+   },
+   {
+    "id":5,
+    "title":"Авто",
+    "img":"https://redstone.media/merge/img/redstone-auto.png"  ,
+    "backgroundColor":"#21487d"
+
+   },
+   {
+    "id":6,
+    "title":"Брендування",
+    "img":"https://redstone.media/merge/img/category-img-3.webp"  ,
+    "backgroundColor":"#eacc14"
+
+   }
+  
+]
